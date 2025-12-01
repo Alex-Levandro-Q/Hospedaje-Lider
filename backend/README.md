@@ -1,22 +1,21 @@
-# Backend - Sistema de Hospedaje
-
 ## Configuración de Base de Datos
 
-1. Asegúrate de que PostgreSQL esté corriendo en localhost:5432
-2. Crea la base de datos:
+1. Asegúrarse de que PostgreSQL esté corriendo en localhost:5433
+
+2. Crear la base de datos:
 ```sql
 CREATE DATABASE hospedaje;
 ```
 
-3. Si necesitas crear un usuario con permisos:
+3. Si necesita crear un usuario con permisos:
 ```sql
 CREATE USER hospedaje_user WITH PASSWORD 'password';
 GRANT ALL PRIVILEGES ON DATABASE hospedaje TO hospedaje_user;
 ```
 
-4. Actualiza el .env si usas autenticación:
+4. Actualiza el .env si se usa autenticación:
 ```
-DATABASE_URL="postgresql://hospedaje_user:password@localhost:5432/hospedaje"
+DATABASE_URL="postgresql://hospedaje_user:password@localhost:5433/hospedaje"
 ```
 
 ## Comandos
