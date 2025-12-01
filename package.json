@@ -3,25 +3,43 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "setup": "node setup.js",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" --names \"FRONT,BACK\" --prefix-colors \"cyan,yellow\"",
+    "dev:frontend": "next dev --turbopack --port 3000",
+    "dev:backend": "cd backend && npm run dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.0",
+    "chart.js": "^4.5.1",
+    "framer-motion": "^12.23.24",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^3.0.4",
+    "jspdf-autotable": "^5.0.2",
+    "next": "^15.5.6",
     "react": "^19.0.0",
+    "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "react-icons": "^5.5.0",
+    "sweetalert2": "^11.26.3",
+    "three": "^0.181.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "@types/three": "^0.181.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "@eslint/eslintrc": "^3"
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }

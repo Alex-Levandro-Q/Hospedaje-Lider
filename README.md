@@ -1,24 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistema de Hospedaje Líder
 
-## Getting Started
+Sistema completo de reservas y gestión de habitaciones para hospedaje, construido con Next.js (frontend) y Express.js + Prisma + PostgreSQL (backend).
 
-First, run the development server:
+## Configuración Inicial
 
+1. **Instalar dependencias:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run setup
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Configurar base de datos PostgreSQL:**
+   - Crear base de datos `hospedaje`
+   - Configurar credenciales en `backend/.env`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Iniciar desarrollo:**
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Esto iniciará:
+- Frontend en [http://localhost:3000](http://localhost:3000)
+- Backend API en [http://localhost:4005](http://localhost:4005)
+
+## Estructura del Proyecto
+
+- `/src` - Frontend Next.js
+- `/backend` - API Express.js con Prisma
+- `/backend/prisma` - Esquemas de base de datos
+
+## API Endpoints
+
+### Usuarios
+- `GET /api/usuarios` - Listar usuarios activos
+- `GET /api/usuarios/:id` - Obtener usuario por ID
+- `POST /api/usuarios` - Crear usuario
+- `PUT /api/usuarios/:id` - Editar usuario
+- `PATCH /api/usuarios/:id/desactivar` - Desactivar usuario
+- `PATCH /api/usuarios/:id/activar` - Activar usuario
 
 ## Learn More
 
